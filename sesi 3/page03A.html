@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
   <!--
     File: page03A.html
-    Creation: 2019-10-05
+    Author: Ahmad Zein Haddad - 222111862 - 2KS5
+    Creation: 2022-02-22
     Description: Size Units / Fonts
   -->
   <head>
     <title>Size Units / Fonts</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-    <script type="text/javascript" src="page03A.js"></script>
+    <script src="page03A.js"></script>
   </head>
 
-  <body style="font-family: 'Roboto Mono', monospace;">
+  <body style="font-family: 'Roboto Mono', monospace; font-size: 24px;">
     <h2>List with font-size 100%</h2>
     <ol style="font-size: 100%;">
+      <!-- em merupakan ukuran yang relatif ke font parent, sedangkan rem ukuran yang relatif ke font dokumen html (root) -->
       <li style="font-size: 1em;">Quick brown fox 1em</li>
+      <!-- rem merupakan ukuran yang relatif ke font root html -->
       <li style="font-size: 1rem;">Quick brown fox 1rem</li>
-      1
+      <!-- pt merupakan ukuran absolut. 72pt = 1in = 96px -->
       <li style="font-size: 12pt;">Quick brown fox 12pt</li>
+      <!-- px merupakan ukuran absolut. 1px = 1 pixel -->
       <li style="font-size: 16px;">Quick brown fox 16px</li>
+      <!-- persen merupkan ukuran yang relatif ke parent -->
       <li style="font-size: 100%;">Quick brown fox 100%</li>
     </ol>
 

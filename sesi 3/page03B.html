@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
   <!--
     File: page03B.html
-    Creation: 2019-10-05
+    Author: Ahmad Zein Haddad - 222111862 - 2KS5
+    Creation: 2022-02-22
     Description: Size Units / Boxes
   -->
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Size Units / Boxes</title>
   </head>
   <body>
     <div style="width:96px;height:96px; border:1px solid #000;background-color:yellow">96px by 96px</div>
     <div style="width:1in;height:1in; border:1px solid #000;background-color:red">1in by 1in</div>
+    <!-- Height 10% tidak berfungsi dengan benar sebab parent (body) tidak memiliki fixed height -->
     <div style="width:10%;height:10%; border:1px solid #000;background-color:orange">10% by 10%</div>
+    <!--
+      Lebar kotak biru lebih besar dari kotak orange
+      karena lebar kotak biru didasarkan oleh lebar viewport (1366px saat browser maximized di laptop saya)
+      sedangkan lebar kotak orange didasarkan pada lebar parent (body mempunyai lebar 1350px)
+    -->
     <div style="width:10vw;height:10vh;color:white; border:1px solid #000;background-color:blue">10vw by 10vh</div>
   </body>
 </html>
