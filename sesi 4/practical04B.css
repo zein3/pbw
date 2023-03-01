@@ -1,0 +1,72 @@
+/*
+ * Nama:   Ahmad Zein Haddad
+ * NIM:    222111862
+ * Kelas:  2KS5
+ */
+
+html, body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+nav {
+  overflow: hidden;
+  width: 100%;
+  background-color: #333333;
+  padding: 0 0.2rem;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav li {
+  float: left;
+  padding: 0.5rem 0;
+}
+
+nav li > a {
+  text-decoration: none;
+  padding: 0.5rem 1.5em;
+  margin: 0;
+  color: white;
+}
+
+nav li > a:hover {
+  background-color: #C74451;
+}
+
+.active {
+  background-color: #C74451;
+}
+
+.judul {
+  font-weight: bold;
+}
+
+.tanggal {
+  font-style: italic;
+}
+
+article {
+  padding-top: 1rem;
+  padding-right: 0.5rem;
+  border-bottom: 1px solid lightgray;
+}
+
+footer {
+  background-color: #333333;
+  text-align: center;
+  color: white;
+  padding: 0.6rem 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer p {
+  margin: 0.7rem;
+}

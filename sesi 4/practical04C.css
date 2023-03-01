@@ -1,0 +1,34 @@
+/*
+ * Nama:   Ahmad Zein Haddad
+ * NIM:    222111862
+ * Kelas:  2KS5
+ */
+
+body {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer"
+}
+
+body > header {
+  grid-area: header;
+}
+
+body > aside {
+  grid-area: sidebar;
+  padding: 1rem 3rem;
+}
+
+body > section#content {
+  grid-area: main;
+}
+
+body > footer {
+  grid-area: footer;
+}
+
+header > h1 {
+  padding: 0 0.5rem;
+}
