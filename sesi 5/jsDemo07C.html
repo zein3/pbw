@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <title>JavaScript 07C</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 0.2rem 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    const generateComparison = (m, n) => {
+      const addCell = (parent, data) => {
+        const cell = document.createElement('td');
+        cell.innerHTML = data;
+        parent.appendChild(cell);
+      }
+
+      const row = document.createElement('tr');
+      addCell(row, `(${typeof m})${m} == (${typeof n})${n}: ${m == n}`);
+      addCell(row, `(${typeof m})${m} === (${typeof n})${n}: ${m === n}`);
+      addCell(row, `(${typeof m})${m} < (${typeof n})${n}: ${m < n}`);
+      addCell(row, `(${typeof m})${m} > (${typeof n})${n}: ${m > n}`);
+
+      document.getElementById('table').appendChild(row);
+    }
+
+    Array.prototype.toString = function () {
+      var arrStr = "[";
+      for (var i = 0; i < this.length; i++) {
+        arrStr += this[i];
+        if (i < this.length - 1) arrStr += ", "
+      }
+      return (arrStr += "]");
+    }
+
+    var values = [0, 123, 1.23e2, "12.3e1", true, false, NaN, Infinity, undefined, null, [0]];
+    for (var i = 0; i < values.length; i++) {
+      document.writeln(i + ") The type of " + values[i] + " is: " + typeof (values[i]) + "<br>");
+    }
+    document.writeln(i + ") The type of " + values + " is: " + typeof (values) + "<br>");
+
+    document.writeln("Elements of values are: " + values.join()+"<br>")
+
+    document.addEventListener("DOMContentLoaded", () => {
+      values.forEach((val1) => {
+        values.forEach((val2) => {
+          generateComparison(val1, val2);
+        });
+      });
+    })
+  </script>
+
+  <table id="table" style="margin-top: 2rem;">
+    
+  </table>
+  <noscript>JavaScript not supported or disabled</noscript>
+</body>
+</html>

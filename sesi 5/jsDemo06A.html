@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+</head>
+<body>
+  <script id="s1">
+    // variabel userAge di s1 dapat dibaca oleh statement di s2 sebab s1 dieksekusi terlebih dahulu.
+    var userAge = 20;
+  </script>
+
+  <p>Our first JavaScript script</p>
+
+  <script id="s2">
+    let user = "Ahmad Zein Haddad";
+    document.writeln(`<p><b>Hello ${user}<br>\nHello World!</b></p>`);
+    document.writeln("(1) The value of userAge is: " + userAge + "<br>");
+    document.writeln("(2) This statement is executed<br>");
+    // jika menggunakan let, javascript akan memunculkan error saat eksekusi statement (1) karena menggunakan variable sebelum dideklarasikan,
+    // sedangkan jika menggunakan var, javascript tidak memberikan error melainkan memberi nilai undefined.
+    // Selain itu, saat deklarasi var dihapus, javascript akan memberikan error sebab variabel tidak didefinisikan.
+    // let userAge = 20;
+    // var userAge = 20;
+    document.writeln(`(3) The value of userAge is: ${userAge}<br>`)
+  </script>
+
+  <script id="s3">
+    // variabel userAge di s3 tidak terbaca sebab s3 dieksekusi setelah s2.
+    // var userAge = 20;
+  </script>
+
+  <p>This is the rest of the page</p>
+  <noscript>Javascript not supported or disabled</noscript>
+</body>
+</html>
