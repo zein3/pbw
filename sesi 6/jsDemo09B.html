@@ -30,6 +30,13 @@
         this.#salary = salary;
       }
 
+      remove() {
+        Employee.#employeeCount--;
+        for (let field in this) {
+          delete this[field];
+        }
+      }
+
       static getEmployeeCount() {
         return Employee.#employeeCount;
       }
@@ -70,7 +77,12 @@
     document.writeln("e[1]'s salary = "+e[1].getSalary()+"<br>");
 
     // For e[1].getEmployeeCount() we expect 3
-    document.writeln("Employees: "+Employee.getEmployeeCount()+"<br>");
+    document.writeln("Employees: " + Employee.getEmployeeCount()+"<br>");
+
+    e[2].remove();
+    delete e[2];
+    // Expected to print the number 2 now
+    document.writeln("Employees: " + Employee.getEmployeeCount()+"<br>");
   </script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!--
+  Nama:   Ahmad Zein Haddad
+  NIM:    222111862
+  Kelas:  2KS5
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Random</title>
+
+  <style>
+    main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #table {
+      table-layout: fixed;
+      border-collapse: collapse;
+      border: 2px solid black;
+    }
+
+    #table td {
+      border: 2px solid black;
+      padding: 0.2rem 0.7rem;
+      -webkit-user-select: none; /* Safari */        
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+      user-select: none; /* Standard */
+    }
+
+    #table td:hover {
+      cursor: pointer;
+    }
+
+    #hitung-btn {
+      margin-top: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>JavaScript Random</h1>
+    
+    <table id="table">
+    </table>
+
+    <button id="hitung-btn">Hitung</button>
+    <div id="sum"></div>
+  </main>
+
+  <script>
+    let matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+    function generateTable() {
+      const table = document.getElementById("table");
+      table.innerHTML = "";
+
+      for (let i = 0; i < matrix.length; i++) {
+        const row = document.createElement("tr");
+        for (let j = 0; j < matrix[i].length; j++) {
+          const element = document.createElement("td");
+          element.innerHTML = matrix[i][j];
+          element.onclick = () => {
+            matrix[i][j] = Math.floor(9 * Math.random() + 1);
+            generateTable();
+          }
+
+          row.append(element);
+        }
+
+        table.append(row);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      generateTable();
+      document.getElementById("hitung-btn").addEventListener("click", () => {
+        let s = 0;
+        for (let i = 0; i < matrix.length; i++) {
+          for (let j = 0; j < matrix[i].length; j++) {
+            s += matrix[i][j];
+          }
+        }
+
+        document.getElementById("sum").innerHTML = `Jumlah seluruh bilangan dalam papan adalah ${s}`;
+      });
+    })
+  </script>
+</body>
+</html>
